@@ -1,48 +1,32 @@
 #include <unistd.h>
 
-int ft_char_repeat(char c)
+void ft_putchar(char c, int n)
 {
-	int i;
-	int count;
-
-	i = 0;
-	count = 0;
-	char abc[] = "abcdefghijklmnopqrstuvwxyz";
-	while (abc[i])
+	while (n > 0)
 	{
-		if (abc[i] == c)
-		{
-			break ;
-		}
-		count++;
-		i++;
+		write(1, &c, 1);
+		n--;
 	}
-	return (count);
 }
 
-int main(int argc, char** argv)
+void repeat_alpha(char *str)
 {
-	int i;
-	int count;
-	int j;
-
-	i = 0;
-	count = 0;
-	if (argc == 2)
+	while (*str)
 	{
-		while (argv[1][i])
-		{
-			j = 0;
-			count = ft_char_repeat(argv[1][i]);
-			while (j <= count)	
-			{
-				write(1, &argv[1][i], 1);
-				j++;
-			}	
-			i++;
-		}
+		if (*str >= 'a' && *str <= 'z')
+			ft_putchar(*str, *str - 'a' + 1);
+		else if (*str >= 'A' && *str <= 'Z')
+			ft_putchar(*str, *str - 'A' + 1);
+		else
+			write(1, str, 1);
+		str++;
 	}
+}
 
+int main(int argc, char **av)
+{
+	if (argc == 2)
+		repeat_alpha(av[1]);
 	write(1, "\n", 1);
 	return (0);
 }
