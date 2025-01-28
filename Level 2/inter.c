@@ -1,5 +1,6 @@
 #include <unistd.h>
 
+// Busca un carácter en el segundo string
 int ft_compare_char(char *str, char c)
 {
 	while (*str)
@@ -11,6 +12,7 @@ int ft_compare_char(char *str, char c)
 	return 0;
 }
 
+// Evita duplicados en el primer string
 int ft_index_repeat(char *str, int i, char c)
 {
 	int j = 0;
@@ -50,3 +52,29 @@ int main(int argc, char **av)
 	write(1, "\n", 1);
 	return (0);
 }
+
+/*
+Input "padinton" "paqefwtdjetyiytjneytjoeyjnejeyj"
+↓
+Recorre primer string
+↓
+Para cada carácter:
+  - Verifica si ya apareció antes (ft_index_repeat)
+  - Si no apareció, busca en segundo string (ft_compare_char)
+  - Si está en ambos, lo imprime
+↓
+Output: "padinto"
+
+"padinton" vs "paqefwtdjetyiytjneytjoeyjnejeyj"
+
+p -> No repetido, está en str2 -> imprime 'p'
+a -> No repetido, está en str2 -> imprime 'a'
+d -> No repetido, está en str2 -> imprime 'd'
+i -> No repetido, está en str2 -> imprime 'i'
+n -> No repetido, está en str2 -> imprime 'n'
+t -> No repetido, está en str2 -> imprime 't'
+o -> No repetido, está en str2 -> imprime 'o'
+n -> Ya repetido, se salta
+
+Resultado: padinto
+*/

@@ -10,15 +10,30 @@ int *ft_range(int start, int end)
 	range = malloc(sizeof(int) * (length));
 	if (range == NULL)
 		return NULL;
-	if (start <= end)
+	while (i < length)
 	{
-		while (start <= end)
-			range[i++] = start++;
-	}
-	else
-	{
-		while (start >= end)
-			range[i++] = start--;
+		range[i++] = start;
+		if (start < end)
+			start++;
+		else
+			start--;
 	}
 	return (range);
 }
+
+/*
+Escribe la siguiente función:
+
+int *ft_range(int start, int end);
+
+Debe asignar (con malloc()) una matriz de números enteros, llenarla con valores 
+consecutivos que comiencen en start y terminen en end (¡Incluyendo start y end!), 
+luego devolver un puntero al primer valor de la matriz.
+
+Ejemplos:
+
+- Con (1, 3) devolverá una matriz que contiene 1, 2 y 3.
+- Con (-1, 2) devolverá una matriz que contiene -1, 0, 1 y 2.
+- Con (0, 0) devolverá una matriz que contiene 0.
+- Con (0, -3) devolverá una matriz que contiene 0, -1, -2 y -3.
+*/

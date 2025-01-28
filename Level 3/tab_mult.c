@@ -27,11 +27,6 @@ int main(int argc, char *argv[])
 		return 0;
 	}
 	int nb = ft_atoi(argv[1]);
-	if (nb <= 0 || nb > 238609294)
-	{
-		write(1, "\n", 1);
-		return 0;
-	}
 	int i = 1;
 	while (i <= 9)
 	{
@@ -43,7 +38,7 @@ int main(int argc, char *argv[])
 		write(1, "\n", 1);
 		i++;
 	}
-	return 0;
+	return (0);
 }
 
 /*

@@ -16,17 +16,20 @@ char *rev_print(char *str)
 
 	while (i-- >= 0)
 		write(1, &str[i], 1);
-	write(1, "\n", 1);
 	return (str);
 }
 
-int main(void)
+int main(int argc, char **av)
 {
-	rev_print("Hello world");
-	write(1, "\n", 1);
-	rev_print("tnirp esreveR");
-	write(1, "\n", 1);
-	rev_print("");
+	if (argc ==2)
+		rev_print(av[1]);
 	write(1, "\n", 1);
 	return (0);
 }
+
+/*
+Write a program that takes a string, and displays the string in reverse
+followed by a newline.
+$> ./rev_print "dub0 a POIL" | cat -e
+LIOP a 0bud$
+*/

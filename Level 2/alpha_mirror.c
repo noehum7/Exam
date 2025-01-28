@@ -20,3 +20,12 @@ int main(int argc, char **av)
 	write(1, "\n", 1);
 	return (0);
 }
+
+/*
+Write a program called alpha_mirror that takes a string and displays this string
+after replacing each alphabetical character by the opposite alphabetical
+character, followed by a newline.
+ 
+'a' becomes 'z', 'Z' becomes 'A'
+'d' becomes 'w', 'M' becomes 'N'
+*/

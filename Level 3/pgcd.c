@@ -6,28 +6,25 @@ int main(int argc, char *argv[])
 {
 	if (argc == 3)
 	{
-		unsigned int min;
-		int n1 = 0;
-		int n2 = 0;
-		n1 = atoi(argv[1]);
-		n2 = atoi(argv[2]);
+		int n1 = atoi(argv[1]);
+		int n2 = atoi(argv[2]);
+
 		if (n1 > 0 && n2 > 0)
 		{
-			min = (n1 < n2) ? n1 : n2;
-			unsigned int den = min;
-			while (den)
+			int min = (n1 < n2) ? n1 : n2;
+			while (min > 0)
 			{
-				if (n1 % den == 0 && n2 % den == 0)
+				if (n1 % min == 0 && n2 % min == 0)
 				{
-					printf("%d", den);
+					printf("%d", min);
 					break ;
 				}
-				den--;
+				min--;
 			}
 		}
 	}
 	printf("\n");
-	return 0;
+	return (0);
 }
 
 /*
@@ -43,28 +40,4 @@ Ejemplos:
 ./pgcd 14 77 muestra 7
 ./pgcd 17 3 muestra 1
 ./pgcd muestra una nueva línea
-*/
-
-/*
-int main(int argc, char const *argv[])
-{
-	int nbr1;
-	int nbr2;
-
-	if (argc == 3)
-	{
-		if ((nbr1 = atoi(argv[1])) > 0 && (nbr2 = atoi(argv[2])) > 0)
-		{
-			while (nbr2 != 0)
-			{
-				int temp = nbr2;
-				nbr2 = nbr1 % nbr2;
-				nbr1 = temp;
-			}
-			printf("%d", nbr1);
-		}
-	}
-	printf("\n");
-	return (0);
-}
 */

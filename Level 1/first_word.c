@@ -48,4 +48,9 @@ en blanco inicial. Una vez que llega al primer carácter que no es un espacio en
 imprime caracteres hasta que encuentre otro tabulador, espacio o el final de la cadena.
 Esto imprime la primera palabra de la cadena de entrada. Finalmente, el programa imprime
 un carácter de nueva línea para finalizar la salida.
+
+$> ./first_word "this    ...    is sparta, then again, maybe    not" | cat -e
+this$
+$> ./first_word "  lorem,ipsum  " | cat -e
+lorem,ipsum$
 */

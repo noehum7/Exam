@@ -28,4 +28,9 @@ Debe escribir un programa llamado hidenp que tome dos cadenas de caracteres y mu
 Decimos que s1 está oculta en s2 si es posible encontrar cada carácter de s1 en s2, en el mismo orden en que aparecen en s1.
 La cadena vacía está oculta en cualquier cadena.
 Si el número de parámetros no es 2, el programa muestra una nueva línea.
+
+$>./hidenp "abc" "2altrb53c.sse" | cat -e
+1$
+$>./hidenp "abc" "btarc" | cat -e
+0$
 */

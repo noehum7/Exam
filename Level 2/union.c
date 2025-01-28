@@ -11,38 +11,31 @@ int ft_char_repeat(char *str, char c)
 	return 0;
 }
 
-int main(int argc, char *argv[])
+void process_string(char *av, char *list, int *j)
+{
+	int i = 0;
+	while (av[i])
+	{
+		if (!char_repeat(list, av[i]))
+		{
+			list[*j] = av[i];
+			write(1, &av[i], 1);
+			(*j)++;
+		}
+		i++;
+	}
+}
+
+int main(int argc, char *av[])
 {
 	if (argc == 3)
 	{
-		int i = 0;
 		int j = 0;
 		char str[256] = {0}; // Array para almacenar caracteres únicos, todos los de la tabla ASCII
 
-		while (argv[1][i])
-		{
-			if (!ft_char_repeat(str, argv[1][i]))
-			{
-				str[j] = argv[1][i];
-				write(1, &argv[1][i], 1);
-				j++;
-			}
-			i++;
-		}
-
-		i = 0;
-		while (argv[2][i])
-		{
-			if (!ft_char_repeat(str, argv[2][i]))
-			{
-				str[j] = argv[2][i];
-				write(1, &argv[2][i], 1);
-				j++;
-			}
-			i++;
-		}
+		process_string(av[1], str, &j);
+		process_string(av[2], str, &j);
 	}
-
 	write(1, "\n", 1);
 	return 0;
 }

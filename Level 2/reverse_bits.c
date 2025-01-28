@@ -1,29 +1,35 @@
 unsigned char	reverse_bits(unsigned char octet)
 {
-	unsigned char result;
-	int i = 8;
-
-	result = 0;
-	while (i > 0)
+	int i = 7;
+	unsigned char result = 0;
+	while (i >= 0)
 	{
-		// result = (result << 1) | (octet & 1);
-		// octet >>= 1;
-		result = result * 2 + (octet % 2);
-		octet = octet / 2;
+		result = (result << 1) | ((octet >> i) & 1);
 		i--;
 	}
-	return result;
+	return (result);
 }
 
 /*
-result * 2: Equivale a desplazar bits a la izquierda (<<)
+Ejemplo con octet = 2 (00000010):
 
-Multiplicar por 2 = mover todos los bits una posición a la izquierda
-octet % 2: Equivale a obtener el bit menos significativo (& 1)
+i=7: 
+- octet >> 7 = 00000000 & 1 = 0
+- result = 00000000 << 1 | 0 = 00000000
 
-Si el número es par, el último bit es 0
-Si es impar, el último bit es 1
-octet / 2: Equivale a desplazar bits a la derecha (>>)
+i=6:
+- octet >> 6 = 00000000 & 1 = 0
+- result = 00000000 << 1 | 0 = 00000000
 
-Dividir entre 2 = mover todos los bits una posición a la derecha
+...
+
+i=1:
+- octet >> 1 = 00000001 & 1 = 1
+- result = 00000000 << 1 | 1 = 00000001
+
+i=0:
+- octet >> 0 = 00000010 & 1 = 0
+- result = 00000001 << 1 | 0 = 00000010
+
+Resultado final: 01000000 (64 en decimal)
 */

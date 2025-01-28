@@ -86,34 +86,62 @@ int main()
 	return (0);
 }
 
-/*
+
 int	ft_atoi_base(const char *str, int str_base)
 {
-	int result;
-	int sign;
-	int i;
-	int c;
+	int i = 0, result = 0, n = 0;
+	int sign = 1;
 
-	sign = 1;
+	if (str_base <= 1 || str_base > 16)
+        return (0);
 	if (*str == '-')
 	{
 		sign = -1;
 		str++;
 	}
-	i = 0;
 	while (str[i])
 	{
 		if (str[i] >= '0' && str[i] <= '9')
-			c = str[i] - '0';
+			n = str[i] - '0';
 		else if (str[i] >= 'a' && str[i] <= 'f')
-			c = str[i] - 'a' + 10;
+			n = str[i] - 'a' + 10; 
 		else if (str[i] >= 'A' && str[i] <= 'F')
-			c = str[i] - 'A' + 10;
+			n = str[i] - 'A' + 10;
 		else
 			break ;
-		result = result * str_base + c;
+		if (n >= str_base)
+            break;
+		result = result * str_base + n;
 		i++;
 	}
 	return (result * sign);
 }
-*/
+
+#include <stdio.h>
+
+int main(void)
+{
+    // Pruebas base 2 (binario)
+    printf("Base 2: %d\n", ft_atoi_base("101", 2));        // 5
+    printf("Base 2: %d\n", ft_atoi_base("-101", 2));       // -5
+
+    // Pruebas base 8 (octal)
+    printf("Base 8: %d\n", ft_atoi_base("12", 8));         // 10
+    printf("Base 8: %d\n", ft_atoi_base("-12", 8));        // -10
+
+    // Pruebas base 10 (decimal)
+    printf("Base 10: %d\n", ft_atoi_base("123", 10));      // 123
+    printf("Base 10: %d\n", ft_atoi_base("-123", 10));     // -123
+
+    // Pruebas base 16 (hexadecimal)
+    printf("Base 16: %d\n", ft_atoi_base("1a", 16));       // 26
+    printf("Base 16: %d\n", ft_atoi_base("1A", 16));       // 26
+    printf("Base 16: %d\n", ft_atoi_base("-1A", 16));      // -26
+
+    // Pruebas casos inválidos
+    printf("Base 1: %d\n", ft_atoi_base("1", 1));          // 0
+    printf("Base 17: %d\n", ft_atoi_base("1", 17));        // 0
+    printf("Base 16 invalida: %d\n", ft_atoi_base("1G", 16)); // 1
+
+    return (0);
+}
