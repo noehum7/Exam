@@ -3,7 +3,7 @@
 int ft_atoi(char *num)
 {
 	int result = 0;
-	while (*num)
+	while (*num >= '0' && *num <= '9')
 	{
 		result = result * 10 + *num - '0';
 		num++;
