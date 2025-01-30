@@ -1,10 +1,10 @@
 #ifndef FLOOD_FILL_H
 # define FLOOD_FILL_H
 
-  typedef struct  s_point
-  {
-    int           x; // x : width (horizontal) | x-axis (abscissa)
-    int           y; // y : height (vertical) | y-axis (ordinate)
-  }               t_point;
+typedef struct  s_point
+{
+	int           x; // Coordenada horizontal (x) columna
+	int           y; // Coordenada vertical (y) fila
+}               t_point;
 
 #endif

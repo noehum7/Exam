@@ -13,6 +13,7 @@ void ft_capitalizer(char *str)
 		write(1, &str[i], 1);
 		i++;
 	}
+	write(1, "\n", 1);
 }
 
 int main(int argc, char *argv[])
@@ -25,7 +26,6 @@ int main(int argc, char *argv[])
 		while (i < argc)
 		{
 			ft_capitalizer(argv[i]);
-			write(1, "\n", 1);
 			i++;
 		}
 	}

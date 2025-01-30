@@ -21,7 +21,7 @@ size_t ft_strspn(const char *s, const char *accept)
 				break;
 			j++;
 		}
-		if (!accept[j]) // Si llegó al final de accept sin encontrar coincidencia
+		if (!accept[j]) // Si llegó al final de accept sin encontrar coincidencia = (accept[j] == '\0')
 			return (result);
 		result++;
 		i++;

@@ -1,6 +1,6 @@
 #include <unistd.h>
 
-// Busca un carácter en el segundo string
+// Busca el caracter en la cadena
 int ft_compare_char(char *str, char c)
 {
 	while (*str)
