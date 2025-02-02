@@ -23,6 +23,7 @@ int main(int argc, char *av[])
 		// Imprimir resto del string
 		while (av[1][i])
 		{
+			// 1º comprobamos si el caracter actual no es espacio o tab, 2º comprobamos si el siguiente caracter existe, no es espacio y no es tab.
 			if (!(av[1][i] == ' ' || av[1][i] == '\t') || (av[1][i + 1] && av[1][i + 1] != ' ' && av[1][i + 1] != '\t'))
 			{
 				write(1, &av[1][i], 1);
