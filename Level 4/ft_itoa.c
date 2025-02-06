@@ -37,7 +37,8 @@ char	*ft_itoa(int nbr)
 		result[0] = '-';
 	else if (nbr == 0)
 		result[0] = '0';
-	// Convertimos los dígitos a caracteres: Decrementamos posicion porque guardamos digitos de derecha a izquierda
+	// Convertimos los dígitos a caracteres: Decrementamos posicion porque guardamos digitos 
+	// de derecha a izquierda
 	while (nbr) // nbr = 123; len = 3; result[] = "   \0";
 	{
 		--len; // 2

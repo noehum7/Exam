@@ -42,5 +42,9 @@ int main(int argc, char *argv[])
 }
 
 /*
-	El ejercicio pide escribir un programa que muestre la tabla de multiplicar de un número. El parámetro siempre será un número estrictamente positivo que cabe en un int, y dicho número multiplicado por 9 también cabrá en un int. Si no hay parámetros, el programa debe mostrar un salto de línea (\n).
+	El ejercicio pide escribir un programa que muestre la tabla de 
+	multiplicar de un número. El parámetro siempre será un número 
+	estrictamente positivo que cabe en un int, y dicho número 
+	multiplicado por 9 también cabrá en un int. Si no hay parámetros, 
+	el programa debe mostrar un salto de línea (\n).
 */

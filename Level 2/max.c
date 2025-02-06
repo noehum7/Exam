@@ -1,6 +1,6 @@
 int		max(int* tab, unsigned int len)
 {
-	int i = 0;
+	int i;
 	int max;
 
 	if (len == 0)

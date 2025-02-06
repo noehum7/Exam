@@ -1,9 +1,3 @@
-/*
-- Para base 16 (hexadecimal): válido hasta F/f (valor 15)
-- Para base 10 (decimal): solo válido hasta 9
-- Para base 2 (binario): solo válido 0 y 1
-*/
-
 int	ft_atoi_base(const char *str, int str_base)
 {
 	int i = 0, result = 0, n = 0;

@@ -1,9 +1,8 @@
-/*
-	`strspn` Busca cuántos caracteres consecutivos desde el inicio de s están presentes en accept. Se detiene cuando encuentra un carácter que NO está en accept.
-*/
-
 #include <unistd.h>
-
+/*
+`strspn` Busca cuántos caracteres consecutivos desde el inicio de s están presentes en accept. 
+Se detiene cuando encuentra un carácter que NO está en accept.
+*/
 size_t ft_strspn(const char *s, const char *accept)
 {
 	int i;
@@ -21,7 +20,7 @@ size_t ft_strspn(const char *s, const char *accept)
 				break;
 			j++;
 		}
-		if (!accept[j]) // Si llegó al final de accept sin encontrar coincidencia = (accept[j] == '\0')
+		if (!accept[j]) // Si llegó al final de accept sin encontrar coincidencia
 			return (result);
 		result++;
 		i++;

@@ -7,7 +7,6 @@ int main(int argc, char** av)
 		while(*av[1])
 		{
 			if ((*av[1] >= 'a' && *av[1] <= 'z') || (*av[1] >= 'A' && *av[1] <= 'Z'))
-				// *av[1] = *av[1] >= 'a' && *av[1] <= 'z' ? *av[1] - 32 : *av[1] + 32;
 				*av[1] = (*av[1] >= 'a') ? *av[1] - 32 : *av[1] + 32;
 			write(1, av[1]++, 1);
 		}

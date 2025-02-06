@@ -12,11 +12,11 @@ void ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)())
 	if (begin_list == NULL || *begin_list == NULL)
 		return ;
 	// tmp almacena temporalmente el nodo actual para manipular la lista sin afectar al puntero original
-	t_list *tmp = *begin_list;
+	t_list *tmp = *begin_list; // Desreferenciamos begin list
 	if (cmp(tmp->data, data_ref) == 0)
 	{
 		*begin_list = tmp->next; // Actualiza lista
-		free(tmp); // Libera nodo seguro
+		free(tmp); // Libera nodo temporal
 		ft_list_remove_if(begin_list, data_ref, cmp);
 	}
 	else 
