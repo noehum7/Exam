@@ -12,12 +12,12 @@
 
 #include <stdlib.h>
 
-static int is_separator(char c)
+int is_separator(char c)
 {
 	return (c == ' ' || c == '\t' || c == '\n');
 }
 
-static int count_words(char *s)
+int count_words(char *s)
 {
 	int count = 0;
 	int flag = 0; // 0 = entre palabras, 1 = dentro de palabra

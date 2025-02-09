@@ -25,9 +25,8 @@ int main(int ac, char **av)
 			if (!first_word) // En la 1ª iteracion no imprime espacio, después ya si (espacio entre palabras)
 				write(1, " ", 1);
 			// Imprimir la palabra actual
-			int j = start;
-			while (j <= end)
-				write(1, &av[1][j++], 1);
+			while (start <= end)
+				write(1, &av[1][start++], 1);
 			first_word = 0;
 		}
 	}

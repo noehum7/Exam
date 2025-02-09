@@ -10,7 +10,7 @@ int ft_strlen(char *str)
 	return (i);
 }
 
-int main(int argc, char const *argv[])
+int main(int argc, char *argv[])
 {
 	int i = 0;
 	if (argc == 2)
