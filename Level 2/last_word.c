@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 	int i = 0;
 	if (argc == 2)
 	{
-		i = ft_strlen(argv[1]);
+		i = ft_strlen(argv[1]) - 1;
 		while (argv[1][i] == ' ' || argv[1][i] == '\t')
 			i--;
 		while (i >= 0 && argv[1][i] != ' ' && argv[1][i] != '\t')

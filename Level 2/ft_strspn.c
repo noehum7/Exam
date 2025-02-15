@@ -5,12 +5,10 @@ Se detiene cuando encuentra un carácter que NO está en accept.
 */
 size_t ft_strspn(const char *s, const char *accept)
 {
-	int i;
-	int j;
-	size_t result;
+	size_t i;
+	size_t j;
 
 	i = 0;
-	result = 0;
 	while (s[i])
 	{
 		j = 0;
@@ -21,11 +19,10 @@ size_t ft_strspn(const char *s, const char *accept)
 			j++;
 		}
 		if (!accept[j]) // Si llegó al final de accept sin encontrar coincidencia
-			return (result);
-		result++;
+			return (i);
 		i++;
 	}
-	return (result);
+	return (i);
 }
 
 #include <stdio.h>
@@ -33,11 +30,11 @@ size_t ft_strspn(const char *s, const char *accept)
 int main(void)
 {
 	// Casos de prueba básicos
-	printf("Test 1: %u\n", ft_strspn("Hello", "Hello"));		// Debería ser 5
-	printf("Test 2: %u\n", ft_strspn("Hello", "Hell"));			// Debería ser 4
-	printf("Test 3: %u\n", ft_strspn("42Hello", "0123456789")); // Debería ser 2
-	printf("Test 4: %u\n", ft_strspn("", "Hello"));				// Debería ser 0
-	printf("Test 5: %u\n", ft_strspn("Hello", ""));				// Debería ser 0
+	printf("Test 1: %lu\n", ft_strspn("Hello", "Hello"));		// Debería ser 5
+	printf("Test 2: %lu\n", ft_strspn("Hello", "Hell"));			// Debería ser 4
+	printf("Test 3: %lu\n", ft_strspn("42Hello", "0123456789")); // Debería ser 2
+	printf("Test 4: %lu\n", ft_strspn("", "Hello"));				// Debería ser 0
+	printf("Test 5: %lu\n", ft_strspn("Hello", ""));				// Debería ser 0
 
 	return (0);
 }
