@@ -4,7 +4,7 @@ void sort_int_tab(int *tab, unsigned int size)
 	int temp;
 
 	while (i < (size - 1)) // to [5,3,1,4,2] => size = 5
-	//					   index  0 1 2 3 4
+	//                     index  0 1 2 3 4
 	// i < (size - 1) compara hasta i = 3 y último acceso es tab[3] y tab[4]
 	{
 		if (tab[i] > tab[i + 1])
