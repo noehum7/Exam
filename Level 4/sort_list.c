@@ -10,9 +10,9 @@ t_list	*sort_list(t_list* lst, int (*cmp)(int, int))
 		if ((*cmp)(lst->data, lst->next->data) == 0) // si los datos no están en orden
 		{
 			temp = lst->data;                // guarda temporalmente el valor del nodo actual
-            lst->data = lst->next->data;   // colocar el valor del siguiente nodo en el nodo actual
-            lst->next->data = temp;          // colocar el valor temporal en el siguiente nodo
-            lst = begin;                       // volver al inicio de la lista para continuar ordenando
+            		lst->data = lst->next->data;    // colocar el valor del siguiente nodo en el nodo actual
+            		lst->next->data = temp;          // colocar el valor temporal en el siguiente nodo
+            		lst = begin;                       // volver al inicio de la lista para continuar ordenando
 		}
 		else
 			lst = lst->next; // si los datos están en orden, pasar al siguiente nodo
