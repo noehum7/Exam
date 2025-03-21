@@ -2,17 +2,18 @@
 
 char    *ft_strdup(char *src)
 {
-	char* copy;
-	int length = 0;
+    char *copy;
+    char *result;
+    int length = 0;
 
-	while (src[length])
-		length++;
-	copy = malloc(sizeof(char) * (length + 1));
-	if (copy == NULL)
-		return NULL;
-	while (*src)
-		*copy++ = *src++;
-	*copy = '\0';
-
-	return (copy);
+    while (src[length])
+        length++;
+    copy = malloc(sizeof(char) * (length + 1));
+    if (!copy)
+        return NULL;
+    result = copy;
+    while (*src)
+        *copy++ = *src++;
+    *copy = '\0';
+    return result;
 }
